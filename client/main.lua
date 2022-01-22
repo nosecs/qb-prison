@@ -97,8 +97,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
 end)
 
 RegisterNetEvent('prison:client:Enter', function(time)
-	QBCore.Functions.Notify( Lang:t("error.injail", {Time = time}), "error")
-
+	QBCore.Functions.Notify("You're in jail for "..time.." months..", "error")
 	TriggerEvent("chatMessage", "SYSTEM", "warning", "Your property has been seized, you'll get everything back when your time is up..")
 	DoScreenFadeOut(500)
 	while not IsScreenFadedOut() do
@@ -119,12 +118,12 @@ RegisterNetEvent('prison:client:Enter', function(time)
 	CreateCellsBlip()
 	Wait(2000)
 	DoScreenFadeIn(1000)
-	QBCore.Functions.Notify( Lang:t("error.do_some_work", {currentjob = Config.Jobs[currentJob] }), "error")
+	QBCore.Functions.Notify("Do some work for sentence reduction, instant job: "..Config.Jobs[currentJob])
 end)
 
 RegisterNetEvent('prison:client:Leave', function()
 	if jailTime > 0 then
-		QBCore.Functions.Notify( Lang:t("info.timeleft", {JAILTIME = jailTime}))
+		QBCore.Functions.Notify("You still have to... "..jailTime.." months..")
 	else
 		jailTime = 0
 		TriggerServerEvent("prison:server:SetJailStatus", 0)
@@ -138,7 +137,7 @@ RegisterNetEvent('prison:client:Leave', function()
 		TimeBlip = nil
 		RemoveBlip(ShopBlip)
 		ShopBlip = nil
-		QBCore.Functions.Notify(Lang:t("success.free_"))
+		QBCore.Functions.Notify("You're free! Enjoy it! :)")
 		DoScreenFadeOut(500)
 		while not IsScreenFadedOut() do
 			Wait(10)
@@ -165,7 +164,7 @@ RegisterNetEvent('prison:client:UnjailPerson', function()
 		TimeBlip = nil
 		RemoveBlip(ShopBlip)
 		ShopBlip = nil
-		QBCore.Functions.Notify(Lang:t("success.free_"))
+		QBCore.Functions.Notify("You're free! Enjoy it! :)")
 		DoScreenFadeOut(500)
 		while not IsScreenFadedOut() do
 			Wait(10)
@@ -189,7 +188,7 @@ CreateThread(function()
 				jailTime = jailTime - 1
 				if jailTime <= 0 then
 					jailTime = 0
-					QBCore.Functions.Notify(Lang:t("success.timesup"), "success", 10000)
+					QBCore.Functions.Notify("Your time is up! Check yourself out at the visitors center", "success", 10000)
 				end
 				TriggerServerEvent("prison:server:SetJailStatus", jailTime)
 			end

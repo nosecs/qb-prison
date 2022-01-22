@@ -26,14 +26,14 @@ local function CreateJobBlip()
         if Chance == Odd then
             TriggerServerEvent('QBCore:Server:AddItem', 'phone', 1)
             TriggerEvent('inventory:client:ItemBox', QBCore.Shared.Items["phone"], "add")
-            QBCore.Functions.Notify(Lang:t("success.found_phone"), "success")
+            QBCore.Functions.Notify("You found a phone..", "success")
         end
     end
 end
 
 local function JobDone()
     if math.random(1, 100) <= 50 then
-        QBCore.Functions.Notify(Lang:t("success.time_cut"))
+        QBCore.Functions.Notify("You've worked some time off your sentence")
         jailTime = jailTime - math.random(1, 2)
     end
     local newLocation = math.random(1, #Config.Locations.jobs[currentJob])
@@ -76,7 +76,7 @@ CreateThread(function()
                         end, function() -- Cancel
                             isWorking = false
                             StopAnimTask(PlayerPedId(), "anim@gangops@facility@servers@", "hotwire", 1.0)
-                            QBCore.Functions.Notify(Lang:t("error.cancelled"), "error")
+                            QBCore.Functions.Notify("Cancelled..", "error")
                         end)
                     end
                 end
