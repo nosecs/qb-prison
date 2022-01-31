@@ -47,48 +47,48 @@ Config.Locations = {
     },
     spawns = {
         [1] = {
-            animation = "bumsleep",
-            coords = vector4(1661.046, 2524.681, 45.564, 260.545)
+            animation = "sitchair",
+            coords = vector4(1757.67, 2494.83, 49.69, 296.33)
         },
         [2] = {
-            animation = "lean",
-            coords = vector4(1650.812, 2540.582, 45.564, 230.436)
+            animation = "lean2",
+            coords = vector4(1765.86, 2498.93, 49.69, 126.39)
         },
         [3] = {
-            animation = "lean",
-            coords = vector4(1654.959, 2545.535, 45.564, 230.436)
+            animation = "finger2",
+            coords = vector4(1762.39, 2495.74, 45.74, 208.11)
         },
         [4] = {
             animation = "lean",
-            coords = vector4(1697.106, 2525.558, 45.564, 187.208)
+            coords = vector4(1747.84, 2491.65, 45.74, 214.58)
         },
         [5] = {
             animation = "sitchair4",
-            coords = vector4(1673.084, 2519.823, 45.564, 229.542)
+            coords = vector4(1747.84, 2491.65, 45.74, 214.58)
         },
         [6] = {
             animation = "sitchair",
-            coords = vector4(1666.029, 2511.367, 45.564, 233.888)
+            coords = vector4(1768.33, 2478.03, 45.74, 127.85)
         },
         [7] = {
-            animation = "sitchair4",
-            coords = vector4(1691.229, 2509.635, 45.564, 52.432)
+            animation = "cop",
+            coords = vector4(1776.05, 2484.34, 45.74, 28.68)
         },
         [8] = {
-            animation = "finger2",
-            coords = vector4(1770.59, 2536.064, 45.564, 258.113)
+            animation = "smoke",
+            coords = vector4(1761.17, 2474.74, 49.69, 31.08)
         },
         [9] = {
             animation = "smoke",
-            coords = vector4(1792.45, 2584.37, 45.56, 276.24)
+            coords = vector4(1764.45, 2476.43, 49.69, 32.59)
         },
         [10] = {
-            animation = "smoke",
-            coords = vector4(1768.33, 2566.08, 45.56, 176.83)
+            animation = "lean2",
+            coords = vector4(1769.5, 2479.83, 49.69, 301.77)
         },
         [11] = {
-            animation = "smoke",
-            coords = vector4(1696.09, 2469.4, 45.56, 1.4)
+            animation = "sitchair2",
+            coords = vector4(1774.6, 2482.05, 49.69, 121.37)
         }
     }
 }
